@@ -1,0 +1,123 @@
+.main {
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.profile {
+  position: relative;
+  .image {
+    display: block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    border: 5px solid #fff;
+  }
+  .user {
+    position: relative;
+    padding: 0px 5px 5px;
+    .avatar {
+      position: absolute;
+      left: 50px;
+      top: -100px;
+      z-index: 2;
+    }
+    h2 {
+      font-size: 16px;
+      line-height: 20px;
+      display: block;
+      float: left;
+      margin: 4px 0px 0px 135px;
+      font-weight: bold;
+    }
+    .actions {
+      float: right;
+      .btn {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .info {
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+.img-cover {
+  width: 800px;
+}
+
+.timeline {
+  margin: 30px;
+  position: relative;
+  li {
+    display: flex;
+    line-height: 1;
+  }
+}
+
+.timeline--date {
+  flex: 0 0 150px;
+  font-family: "Droid Serif", serif;
+  font-size: 90%;
+  text-align: right;
+  margin-right: 50px;
+}
+
+.timeline--circle {
+  flex: 0 0 50px;
+  position: relative;
+  text-align: center;
+
+  i {
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    display: inline-block;
+    background: #222;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    z-index: 3;
+  }
+}
+
+.timeline--description {
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+
+.timeline li:not(:last-child) {
+  .timeline--circle {
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 2px;
+      background: #222;
+      margin: auto;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      margin-top: 14px;
+    }
+   
+  }
+}
+
+.timeline li:hover {
+  .timeline--date,
+  .timeline--description {
+    color: #555;
+  }
+
+  .timeline--circle {
+    i {
+      transform: scale(4);
+    }
+  }
+}
+
+mat-slider.skill-slider{
+  width: 150px;
+}
