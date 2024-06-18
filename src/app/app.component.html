@@ -1,69 +1,123 @@
 <main class="main p-4">
   <div class="container">
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">User Information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8 shadow rounded">
-            <div class="profile clearfix">
-              <div class="image mb-3">
-                <img src="https://www.bootdey.com/image/1000x300/FFB6C1" class="img-fluid img-cover">
-                <button type="button" class="btn btn-secondary text-uppercase position-absolute bottom-0 end-0 m-2">
-                  <fa-icon [icon]="faCamera"></fa-icon> Edit cover photo
-                </button>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <div class="user clearfix">
-                    <div class="avatar">
-                      <img src="https://bootdey.com/img/Content/user-453533-fdadfd.png"
-                        class="img-fluid img-thumbnail img-profile rounded-circle">
-                      <button type="button"
-                        class="btn btn-secondary rounded-circle position-absolute bottom-0 end-0 m-2">
-                        <fa-icon [icon]="faCamera"></fa-icon>
-                      </button>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">User Information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8 shadow rounded">
+              <div class="profile clearfix">
+                <div class="image mb-3">
+                  <img src="https://www.bootdey.com/image/1000x300/FFB6C1" class="img-fluid img-cover">
+                  <button type="button" class="btn btn-secondary text-uppercase position-absolute bottom-0 end-0 m-2">
+                    <fa-icon [icon]="faCamera"></fa-icon> Edit cover photo
+                  </button>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="user clearfix">
+                      <div class="avatar">
+                        <img src="https://bootdey.com/img/Content/user-453533-fdadfd.png"
+                          class="img-fluid img-thumbnail img-profile rounded-circle">
+                        <button type="button"
+                          class="btn btn-secondary rounded-circle position-absolute bottom-0 end-0 m-2">
+                          <fa-icon [icon]="faCamera"></fa-icon>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label for="username" class="text-uppercase">Username</label>
+                        <input type="text" class="form-control" id="username" formControlName="username"
+                          [disabled]="true">
+                      </div>
+                      <div class="col">
+                        <label for="nickname" class="text-uppercase">Nick name</label>
+                        <input type="text" class="form-control" id="nickname" formControlName="nickname">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label for="firstname" class="text-uppercase">First name</label>
+                        <input type="text" class="form-control" id="firstname" formControlName="firstname">
+                      </div>
+                      <div class="col">
+                        <label for="lastname" class="text-uppercase">Last name</label>
+                        <input type="text" class="form-control" id="lastname" formControlName="lastname">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label for="position" class="text-uppercase">Position</label>
+                        <input type="text" class="form-control" id="position" formControlName="position">
+                      </div>
+                      <div class="col">
+                        <label for="nationality" class="text-uppercase">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" formControlName="nationality">
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="col">
+                        <label for="telephonenumber" class="text-uppercase">Telephone number</label>
+                        <input type="text" class="form-control" id="telephonenumber" formControlName="telephonenumber">
+                      </div>
+                      <div class="col">
+                        <label for="startdate" class="text-uppercase">Starting date</label>
+                        <input type="date" class="form-control" id="startdate" formControlName="startdate">
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Contact information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
                 <div class="col">
                   <div class="row mb-3">
-                    <div class="col">
-                      <label for="username" class="text-uppercase">Username</label>
-                      <input type="text" class="form-control" id="username" name="username" disabled>
-                    </div>
-                    <div class="col">
-                      <label for="nickname" class="text-uppercase">Nick name</label>
-                      <input type="text" class="form-control" id="nickname" name="nickname">
+                    <div class="col-12">
+                      <label for="address" class="text-uppercase">Address</label>
+                      <input type="text" class="form-control" id="address" formControlName="address">
                     </div>
                   </div>
                   <div class="row mb-3">
                     <div class="col">
-                      <label for="firstname" class="text-uppercase">First name</label>
-                      <input type="text" class="form-control" id="firstname" name="firstname">
+                      <label for="subdistrict" class="text-uppercase">Sub District</label>
+                      <input type="text" class="form-control" id="subdistrict" formControlName="subdistrict">
                     </div>
                     <div class="col">
-                      <label for="lastname" class="text-uppercase">Last name</label>
-                      <input type="text" class="form-control" id="lastname" name="lastname">
+                      <label for="district" class="text-uppercase">District</label>
+                      <input type="text" class="form-control" id="district" formControlName="district">
+                    </div>
+                    <div class="col">
+                      <label for="province" class="text-uppercase">Province</label>
+                      <input type="text" class="form-control" id="province" formControlName="province">
+                    </div>
+                    <div class="col">
+                      <label for="postalcode" class="text-uppercase">Postal Code</label>
+                      <input type="text" class="form-control" id="postalcode" formControlName="postalcode">
                     </div>
                   </div>
                   <div class="row mb-3">
                     <div class="col">
-                      <label for="position" class="text-uppercase">Position</label>
-                      <input type="text" class="form-control" id="position" name="position">
+                      <label for="facebook" class="text-uppercase">Facebook</label>
+                      <input type="text" class="form-control" id="facebook" formControlName="facebook">
                     </div>
                     <div class="col">
-                      <label for="nationality" class="text-uppercase">Nationality</label>
-                      <input type="text" class="form-control" id="nationality" name="nationality">
-                    </div>
-                  </div>
-                  <div class="row mb-3">
-                    <div class="col">
-                      <label for="phone" class="text-uppercase">Telephone number</label>
-                      <input type="text" class="form-control" id="phone" name="phone">
+                      <label for="line" class="text-uppercase">Line ID</label>
+                      <input type="text" class="form-control" id="line" formControlName="line">
                     </div>
                     <div class="col">
-                      <label for="startdate" class="text-uppercase">Starting date</label>
-                      <input type="date" class="form-control" id="startdate" name="startdate">
+                      <label for="instagram" class="text-uppercase">Instagram</label>
+                      <input type="text" class="form-control" id="instagram" formControlName="instagram">
                     </div>
                   </div>
                 </div>
@@ -72,159 +126,108 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Contact information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <div class="row mb-3">
-                  <div class="col-12">
-                    <label for="address" class="text-uppercase">Address</label>
-                    <input type="text" class="form-control" id="address" name="address">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col">
-                    <label for="subdistrict" class="text-uppercase">Sub District</label>
-                    <input type="text" class="form-control" id="subdistrict" name="subdistrict">
-                  </div>
-                  <div class="col">
-                    <label for="district" class="text-uppercase">District</label>
-                    <input type="text" class="form-control" id="district" name="district">
-                  </div>
-                  <div class="col">
-                    <label for="province" class="text-uppercase">Province</label>
-                    <input type="text" class="form-control" id="province" name="province">
-                  </div>
-                  <div class="col">
-                    <label for="zipcode" class="text-uppercase">Postal Code</label>
-                    <input type="text" class="form-control" id="zipcode" name="zipcode">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <div class="col">
-                    <label for="facebook" class="text-uppercase">Facebook</label>
-                    <input type="text" class="form-control" id="facebook" name="facebook">
-                  </div>
-                  <div class="col">
-                    <label for="line" class="text-uppercase">Line ID</label>
-                    <input type="text" class="form-control" id="line" name="line">
-                  </div>
-                  <div class="col">
-                    <label for="instagram" class="text-uppercase">Instagram</label>
-                    <input type="text" class="form-control" id="instagram" name="instagram">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Educational information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary mx-auto text-uppercase d-block">
-                  Add education
-                </button>
-                <ul class="timeline timeline-vertical">
-                  <li>
-                    <span class="timeline--date text-uppercase">Year</span>
-                    <div class="timeline--circle"> <i></i>
-                    </div>
-                    <div class="timeline--description text-uppercase">
-                      University name
-                    </div>
-                  </li>
-                  <li>
-                    <span class="timeline--date text-uppercase">Year</span>
-                    <div class="timeline--circle"> <i></i>
-                    </div>
-                    <div class="timeline--description text-uppercase">
-                      University name
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Experience information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary text-uppercase ">
-                  Add experience
-                </button>
-                <ul class="timeline timeline-vertical">
-                  <li>
-                    <div class="timeline--circle"> <i></i>
-                    </div>
-                    <div class="timeline--description text-uppercase">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Year</option>
-                        <option value="1">2021</option>
-                        <option value="2">2020</option>
-                        <option value="3">2019</option>
-                      </select>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="timeline--circle"> <i></i>
-                    </div>
-                    <div class="timeline--description text-uppercase">
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected>Year</option>
-                        <option value="1">2021</option>
-                        <option value="2">2020</option>
-                        <option value="3">2019</option>
-                      </select>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Skill information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
-                  Add skill
-                </button>
-                <div class="row mb-3">
-                  <div class="col-6">
-                    <div class="row align-items-center">
-                      <div class="col">
-                        <p class="m-0 text-center">python</p>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Educational information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-outline-primary mx-auto text-uppercase d-block">
+                    Add education
+                  </button>
+                  <ul class="timeline timeline-vertical">
+                    <li>
+                      <span class="timeline--date text-uppercase">Year</span>
+                      <div class="timeline--circle"> <i></i>
                       </div>
-                      <div class="col">
-                        <p class="m-0 text-center">{{slider.value}}</p>
+                      <div class="timeline--description text-uppercase">
+                        University name
                       </div>
-                      <div class="col">
-                        <div class="form-floating">
-                          <mat-slider [max]="max" [min]="min" [step]="step" [discrete]="thumbLabel"
-                            [showTickMarks]="showTicks">
-                            <input matSliderThumb [(ngModel)]="value" #slider>
-                          </mat-slider>
+                    </li>
+                    <li>
+                      <span class="timeline--date text-uppercase">Year</span>
+                      <div class="timeline--circle"> <i></i>
+                      </div>
+                      <div class="timeline--description text-uppercase">
+                        University name
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Experience information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-outline-primary text-uppercase ">
+                    Add experience
+                  </button>
+                  <ul class="timeline timeline-vertical">
+                    <li>
+                      <div class="timeline--circle"> <i></i>
+                      </div>
+                      <div class="timeline--description text-uppercase">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Year</option>
+                          <option value="1">2021</option>
+                          <option value="2">2020</option>
+                          <option value="3">2019</option>
+                        </select>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="timeline--circle"> <i></i>
+                      </div>
+                      <div class="timeline--description text-uppercase">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Year</option>
+                          <option value="1">2021</option>
+                          <option value="2">2020</option>
+                          <option value="3">2019</option>
+                        </select>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Skill information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
+                    Add skill
+                  </button>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <p class="m-0 text-center">python</p>
+                        </div>
+                        <div class="col">
+                          <p class="m-0 text-center">{{slider.value}}</p>
+                        </div>
+                        <div class="col">
+                          <div class="form-floating">
+                            <mat-slider [max]="max" [min]="min" [step]="step" [discrete]="thumbLabel"
+                              [showTickMarks]="showTicks">
+                              <input matSliderThumb [(ngModel)]="value" #slider>
+                            </mat-slider>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -235,20 +238,20 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Interests information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
-                  Add Interests
-                </button>
-                <div class="row mb-3">
-                  <div class="col">
-                    <tag-input [(ngModel)]='interestsItems'></tag-input>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Interests information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
+                    Add Interests
+                  </button>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <tag-input [(ngModel)]='interestsItems'></tag-input>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,21 +259,20 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="card mb-3">
-      <div class="card-body">
-        <h3 class="text-uppercase">Guild information</h3>
-        <div class="row justify-content-center p-4">
-          <div class="col-8">
-            <div class="row">
-              <div class="col">
-                <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
-                  Add guild
-                </button>
-                <div class="row mb-3">
-                  <div class="col">
-                    {{guildItems}}
-                    <tag-input [(ngModel)]='guildItems'></tag-input>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="text-uppercase">Guild information</h3>
+          <div class="row justify-content-center p-4">
+            <div class="col-8">
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-outline-primary text-uppercase mb-3">
+                    Add guild
+                  </button>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <tag-input [(ngModel)]='guildItems'></tag-input>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -278,8 +280,7 @@
           </div>
         </div>
       </div>
-    </div>
-    
+    </form>
   </div>
 </main>
 
